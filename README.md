@@ -3,6 +3,8 @@ Corresponde una interfaz la cual es compatible para que un teclado y un mouse se
 ## Diagrama de tiempos del puerto PS2
 ![DDT](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/DTPS2.png)
 ## Máquina de estados del receptor PS2 
+### Estado idle:
+ El receptor inicialmente se encuentra en estado inactivo. La señal de control  rx-en  se usa para habilitar o deshabilitar la operación de recepción. Después de confirmar el primer tick de borde decreciente y la señal rx-en en alto,  se desplaza  el bit de inicio y luego se salta al estado dps.
 ![FSM](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/FSM_PS2.png)
 ![Módulo PS2 con Buffer](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/TOP.png)
 ## Referencias bibliográficas:
