@@ -5,6 +5,9 @@ Corresponde una interfaz la cual es compatible para que un teclado y un mouse se
 ## Diagramas de bloques:
 ### Diagrama de primer nivel:
 ![DPN](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/DPN.png)
+### Diagrama de segundo nivel:
+![DSN](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/DSNPS2.png)
+
 ## Máquina de estados del receptor PS2 
 ### Estado idle:
  El receptor inicialmente se encuentra en estado inactivo. La señal de control  rx-en  se usa para habilitar o deshabilitar la operación de recepción. Después de confirmar el primer tick de borde decreciente y la señal rx-en en alto,  se desplaza  el bit de inicio y luego se salta al estado dps.
