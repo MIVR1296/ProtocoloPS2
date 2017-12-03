@@ -98,9 +98,16 @@ wire enableSD;
 // Instancia de compuerta and para habilitar carga en el segundo registro 
 // segun valor del contador
 
-And2 SDS(
+/*And2 SDS(
 .dina(~z[1]),
 .dinb(~z[2]),
+.dout(enableSD)
+); */
+
+And4 SDS(
+.dina(z[0]), 
+.dinb(~z[1]),
+.dinc(~z[2]),
 .dout(enableSD)
 );
 
@@ -137,11 +144,18 @@ wire enableUD;
 // Instancia de compuerta and para habilitar carga en el ultimo registro 
 // segun valor del contador
 
-And2 UDF(
+And4 UDF(
+.dina(z[0]), 
+.dinb(z[1]),
+.dinc(~z[2]),
+.dout(enableUD)
+);
+
+/*And2 UDF(
 .dina(z[0]),
 .dinb(z[1]),
 .dout(enableUD)
-);
+); */
 
 Nbit_register UD(
 .clk(clk), 
