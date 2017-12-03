@@ -5,6 +5,10 @@ Corresponde una interfaz la cual es compatible para que un teclado y un mouse se
 ## Máquina de estados del receptor PS2 
 ### Estado idle:
  El receptor inicialmente se encuentra en estado inactivo. La señal de control  rx-en  se usa para habilitar o deshabilitar la operación de recepción. Después de confirmar el primer tick de borde decreciente y la señal rx-en en alto,  se desplaza  el bit de inicio y luego se salta al estado dps.
+ ### Estado dps:
+Dado que los datos recibidos están en formato fijo, cambiamos los 10 bits restantes en un solo estado en lugar de utilizar datos separados, paridad y estados de detención. Posteriormente se pasa al estado de carga.
+### Estado Load:
+Proporciona un ciclo extra de reloj para completar el desplazamiento del bit de parada, y la señal rx-done-tick se confirma para un ciclo de reloj.
 ![FSM](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/FSM_PS2.png)
 ![Módulo PS2 con Buffer](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/TOP.png)
 ## Referencias bibliográficas:
