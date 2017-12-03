@@ -29,7 +29,7 @@ reg clk;
 reg clear;
     
 // Salidas
-wire [1:0] z;
+wire [2:0] z;
 
 Counter uutC(
 .clk(clk),
@@ -51,7 +51,7 @@ initial
 
          always
              begin      
-                #60 clear=~clear;                      
+                #80 clear=~clear;                      
              end    
                                                          
 endmodule
