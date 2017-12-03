@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/02/2017 03:35:06 PM
+// Create Date: 12/02/2017 10:53:59 PM
 // Design Name: 
-// Module Name: And4
+// Module Name: Or2
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module And4(
-input dina,dinb,dinc,
+module Or2(
+input dina, dinb,
 output dout
 );
 
-assign dout = dina & dinb & dinc;
-endmodule
+assign dout = dina | dinb;
 
+endmodule

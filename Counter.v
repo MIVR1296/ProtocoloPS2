@@ -23,10 +23,10 @@
 module Counter(
  input clk,
  input clear,
- output [1:0] z
+ output [2:0] z
 );
 
-reg [3:0] q;
+reg [2:0] q;
 
  always @(posedge clk, posedge clear)
     if (clear == 1)
