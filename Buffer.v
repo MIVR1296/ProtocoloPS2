@@ -16,21 +16,22 @@
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+//  Modulo de buffer, carga los datos del teclado hasta llegar a la capacidad
+// maxima de 32 bits y enciende la bandera de listo y pasa los datoos al modulo DMA
+///////////////////////////////////////////////////////////////////////////////////
 
 
 module Buffer(
-input clk, reset,tick,
-input [7:0] d,
+input clk, reset,tick, // clk de los registros, reset del sistema, tick es el clk del contador
+input [7:0] d, // datos que salen del teclado
 output ready,
-output [7:0] qfi,
+output [7:0] qfi, // datos salidas de los registros
 output [7:0] qs,
 output [7:0] qt,
 output [7:0] qf,
-output [2:0] z,
-output [31:0] joi,
-output listo
+output [2:0] z, // valor del contador
+output [31:0] joi, // 32 bits de salida hacia modulo DMA
+output listo // bandera de datos cargados
 );
 
 assign joi = {qfi,qs,qt,qf}; //concatenation operator
@@ -41,6 +42,8 @@ assign joi = {qfi,qs,qt,qf}; //concatenation operator
 reg [7:0] qs;  // salida segundo registro
 reg [7:0] qt;  // salida tercer registrp
 reg [7:0] qf; // salida cuarto registro*/
+
+
 
 And4 DReady(
 .dina(z[0]), 
@@ -72,6 +75,9 @@ Counter B(
 
 wire enablePD;
 
+// Instancia de compuerta and para habilitar carga en el primer registro 
+// segun valor del contador
+
 And4 PDFI(
 .dina(~z[0]), 
 .dinb(~z[1]),
@@ -89,6 +95,9 @@ Nbit_register PD(
 
 wire enableSD;
 
+// Instancia de compuerta and para habilitar carga en el segundo registro 
+// segun valor del contador
+
 And2 SDS(
 .dina(~z[1]),
 .dinb(~z[2]),
@@ -104,6 +113,9 @@ Nbit_register SD(
 );
 
 wire enableTD;
+
+// Instancia de compuerta and para habilitar carga en el tercer registro 
+// segun valor del contador
 
 And4 TDT(
 .dina(~z[0]), 
@@ -121,6 +133,9 @@ Nbit_register TD(
 );
 
 wire enableUD;
+
+// Instancia de compuerta and para habilitar carga en el ultimo registro 
+// segun valor del contador
 
 And2 UDF(
 .dina(z[0]),

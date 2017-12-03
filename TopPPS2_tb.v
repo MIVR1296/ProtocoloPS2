@@ -35,6 +35,13 @@ wire listo;
 wire [31:0] joi;
 wire tick;
 
+wire [7:0] qfi;
+wire [7:0] qs;
+wire [7:0] qt;   
+wire [7:0] qf;
+wire [2:0] z;
+
+
 TopPPS2 uutTop(
 .clk(clk),
 .reset(reset),
@@ -43,7 +50,12 @@ TopPPS2 uutTop(
 .rx_en(rx_en),
 .joi(joi),
 .listo(listo),
-.tick(tick)
+.tick(tick),
+.qfi(qfi),
+.qs(qs),
+.qt(qt),
+.qf(qf),
+.z(z)
 );
 
 initial
@@ -64,70 +76,28 @@ initial
              begin
                   #100000 ps2c=~ps2c;
              end
-         always
-             begin      
-                 // #200000 ps2d = 1;
-                  #200000  ps2d = 0; //inicio 
-             //byte de datos
-                  #200000  ps2d = 0;
-                  #200000  ps2d = 1;
-                  #200000  ps2d = 0;
-                  #200000  ps2d = 1;
-                  #200000  ps2d = 1;
-                  #200000  ps2d = 0;
-                  #200000  ps2d = 1;
-                  #200000  ps2d = 0;
-             //paridad
-                  #200000  ps2d = 1;
-             //final
-                  #200000  ps2d = 1;   
-                  
-                                   // #200000 ps2d = 1;
-                   #200000  ps2d = 0; //inicio 
-              //byte de datos
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 0;
-              //paridad
-                   #200000  ps2d = 1;
-              //final
-                   #200000  ps2d = 1;  
-                   
-                   #200000  ps2d = 0; //inicio 
-              //byte de datos
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 0;
-              //paridad
-                   #200000  ps2d = 1;
-              //final
-                   #200000  ps2d = 1;  
-                   
-                   #200000  ps2d = 0; //inicio 
-              //byte de datos
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 0;
-                   #200000  ps2d = 1;
-                   #200000  ps2d = 1;
-              //paridad
-                   #200000  ps2d = 1;
-              //final
-                   #200000  ps2d = 1;  
-                                            
-             end
+    
+    always
+                 begin
+                          ps2d = 0; //inicio 
+                         
+                          //byte de datos
+                          #1  ps2d = 0;
+                          #1  ps2d = 1;
+                          #1  ps2d = 0;
+                          #1  ps2d = 1;
+                          #1  ps2d = 1;
+                          #1  ps2d = 0;
+                          #1  ps2d = 1;
+                          #1  ps2d = 0;  
+                         
+                         //paridad
+                          #1  ps2d = 1;
+                         //final
+                          #1  ps2d = 1; 
+                          
+
+                  end    
+    
     
 endmodule
