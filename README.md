@@ -28,6 +28,7 @@ El Buffer, carga los datos del teclado hasta llegar a la capacidad maxima de 32 
 ![Buffer](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/buffer.png)
 ## Simulaciones
 ### Receptor PS2
+En la simulación Post-synthesis del receptor PS2 se observa el paquete de 11 bits compuestos por el bit de inicio, los 8 bits de dados, el de paridad impar y finalmente el de parada. Los bits se pueden ver en la señal de datos ps2c ,en la cual se asignó en el Testbench que el bit de incio fuese "0" los de datos "01011010", el de paridad "1" y finalmente el de parada "1".
 ![TSBT](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/TSBT.png)
 ### Buffer
 El tick es el que indica que ya están los 8 bits del teclado y por eso se utiliza como clk en el contador, porque cuando hay un tick se sabe que hay 8 bits válidos, entonces se cargan al primer registro, y así, cuando hay otro tick, se carga al segundo registro y así sucesivamente. Entonces las salidas del contador son 3 bits, por lo que cuando está en 000 va hacia la and, y coloca el primer dato, luego en 001 el segundo dato y así continua hasta completar los 32 bits. Cuando el bus está lleno entonces se levanta la bandera de listo.
