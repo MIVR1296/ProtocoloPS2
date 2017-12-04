@@ -30,6 +30,7 @@ El Buffer, carga los datos del teclado hasta llegar a la capacidad maxima de 32 
 ### Receptor PS2
 En la simulación Post-synthesis del receptor PS2 se observa el paquete de 11 bits compuestos por el bit de inicio, los 8 bits de dados, el de paridad impar y finalmente el de parada. Los bits se pueden ver en la señal de datos ps2c ,en la cual se asignó en el Testbench que el bit de incio fuese "0" los de datos "01011010", el de paridad "1" y finalmente el de parada "1". Ahora en este caso se decidió que la señal rx_en se mantuviese en alto, por lo que la recepción está habilitada.
 ![TSBT2](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/TT2.png)
+Como se observa en la siguiente imagen, cuando se completa el ciclo de reloj (ver máquina de estados), se levanta la bandera px_done_tick.
 ![TSBT](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/TSBT.png)
 
 
