@@ -27,7 +27,8 @@ El Buffer, carga los datos del teclado hasta llegar a la capacidad maxima de 32 
 ### Buffer
 El tick es el que indica que ya están los 8 bits del teclado y por eso se utiliza como clk en el contador, porque cuando hay un tick se sabe que hay 8 bits válidos, entonces se cargan al primer registro, y así, cuando hay otro tick, se carga al segundo registro y así sucesivamente. Entonces las salidas del contador son 3 bits, por lo que cuando está en 000 va hacia la and, y coloca el primer dato, luego en 001 el segundo dato y así continua hasta completar los 32 bits.
 ![Buffer](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/buffer.png)
-
+## Simulaciones
+![SPB](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/SPB.png)
 
 
 ## Referencias bibliográficas:
