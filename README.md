@@ -5,7 +5,7 @@ Corresponde una interfaz la cual es compatible para que un teclado y un mouse se
 ## Diagramas de bloques:
 ### Diagrama de primer nivel: 
 El módulo PS2 tiene como entradas  la señal de datos ps2d y la señal de reloj ps2c. El borde descendente de la señal ps2c se utiliza como punto de referencia para recuperar datos. La señal rx_en se utiliza para habilitar o deshabilitar la operación de recepción. 
-A la salida se encuentran los 32 bits que se conectan al módulo I/O. La bandera de listo indica al módulo I/O, que el buffer está lleno. Finalmente tick es la bandera para indicarque el dato del teclado es válido.
+A la salida se encuentran los 32 bits que se conectan al módulo I/O. La bandera de listo indica al módulo I/O, que el buffer está lleno. Finalmente tick es la bandera para indicar que el dato del teclado es válido.
 ![DPN](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/DPN.png)
 ### Diagrama de segundo nivel:
 ![DSN](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/DSNPS2.png)
