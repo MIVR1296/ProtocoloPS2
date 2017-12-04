@@ -3,7 +3,8 @@ Corresponde una interfaz la cual es compatible para que un teclado y un mouse se
 ## Diagrama de tiempos del puerto PS2
 ![DDT](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/DTPS2.png)
 ## Diagramas de bloques:
-### Diagrama de primer nivel:
+### Diagrama de primer nivel: 
+El módulo PS2 tiene como entradas  la señal de datos ps2d y la señal de reloj ps2c. El borde descendente de la señal ps2c se utiliza como punto de referencia para recuperar datos. La señal rx_en se utiliza para habilitar o deshabilitar la operación de recepción. 
 ![DPN](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/DPN.png)
 ### Diagrama de segundo nivel:
 ![DSN](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/DSNPS2.png)
