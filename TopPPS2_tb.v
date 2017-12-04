@@ -76,28 +76,24 @@ initial
              begin
                   #100000 ps2c=~ps2c;
              end
-    
-    always
-                 begin
-                          ps2d = 0; //inicio 
-                         
-                          //byte de datos
-                          #1  ps2d = 0;
-                          #1  ps2d = 1;
-                          #1  ps2d = 0;
-                          #1  ps2d = 1;
-                          #1  ps2d = 1;
-                          #1  ps2d = 0;
-                          #1  ps2d = 1;
-                          #1  ps2d = 0;  
-                         
-                         //paridad
-                          #1  ps2d = 1;
-                         //final
-                          #1  ps2d = 1; 
-                          
-
-                  end    
-    
-    
+         always
+             begin      
+                 // #200000 ps2d = 1;
+                  #200000  ps2d = 0; //inicio 
+             //byte de datos
+                  #200000  ps2d = 0;
+                  #200000  ps2d = 1;
+                  #200000  ps2d = 0;
+                  #200000  ps2d = 1;
+                  #200000  ps2d = 1;
+                  #200000  ps2d = 0;
+                  #200000  ps2d = 1;
+                  #200000  ps2d = 0;
+             //paridad
+                  #200000  ps2d = 1;
+             //final
+                  #200000  ps2d = 1;                         
+             end    
+                                                         
 endmodule
+
