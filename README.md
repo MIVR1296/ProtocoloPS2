@@ -19,7 +19,8 @@ El receptor del puerto PS2  sutiliza como punto de referencia el borde descenden
 Dado que los datos recibidos están en formato fijo, cambiamos los 10 bits restantes en un solo estado en lugar de utilizar datos separados, paridad y estados de detención. Posteriormente se pasa al estado de carga.
 ###### Estado Load:
 Proporciona un ciclo extra de reloj para completar el desplazamiento del bit de parada, y la señal rx-done-tick se confirma para un ciclo de reloj.
-#### Receptor PS2
+#### Buffer
+Modulo de buffer, carga los datos del teclado hasta llegar a la capacidad maxima de 32 bits y enciende la bandera de listo y pasa los datos al modulo I/O. 
 ## Diagramas RTL:
 ### Módulo PS2 y Buffer
 ![Módulo PS2 con Buffer](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/TOPPS2.png)
