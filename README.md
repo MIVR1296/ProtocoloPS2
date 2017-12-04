@@ -16,10 +16,10 @@ Dado que los datos recibidos están en formato fijo, cambiamos los 10 bits resta
 ### Estado Load:
 Proporciona un ciclo extra de reloj para completar el desplazamiento del bit de parada, y la señal rx-done-tick se confirma para un ciclo de reloj.
 ![FSM](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/FSM_PS2.png)
-## Diagramas RTL
-### Módulo PS2 y Buffer
+## Diagramas RTL:
+### *Módulo PS2 y Buffer
 ![Módulo PS2 con Buffer](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/TOPPS2.png)
-### Buffer
+### *Buffer
 ![Buffer](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/buffer.png)
 
 ## Referencias bibliográficas:
