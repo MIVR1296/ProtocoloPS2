@@ -20,7 +20,7 @@ Dado que los datos recibidos están en formato fijo, cambiamos los 10 bits resta
 ###### Estado Load:
 Proporciona un ciclo extra de reloj para completar el desplazamiento del bit de parada, y la señal rx-done-tick se confirma para un ciclo de reloj.
 #### Buffer
-Modulo de buffer, carga los datos del teclado hasta llegar a la capacidad maxima de 32 bits y enciende la bandera de listo y pasa los datos al modulo I/O. 
+El Buffer, carga los datos del teclado hasta llegar a la capacidad maxima de 32 bits y enciende la bandera de listo y pasa los datos al modulo I/O. 
 ## Diagramas RTL:
 ### Módulo PS2 y Buffer
 ![Módulo PS2 con Buffer](https://github.com/MIVR1296/ProtocoloPS2/blob/master/Diagramas/TOPPS2.png)
